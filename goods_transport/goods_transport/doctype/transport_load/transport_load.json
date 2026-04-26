@@ -1,0 +1,195 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:GT-LOAD-{#####}",
+ "creation": "2026-04-26 00:00:00",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "tenant",
+  "posting_date",
+  "origin_city",
+  "vehicle",
+  "vehicle_owner",
+  "total_bilties",
+  "paid_amount",
+  "column_break_load",
+  "load_type",
+  "destination_city",
+  "driver",
+  "status",
+  "total_freight",
+  "receiver_pay_amount",
+  "bilties_section",
+  "bilties",
+  "remarks"
+ ],
+ "fields": [
+  {
+   "fieldname": "tenant",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Tenant",
+   "options": "Transport Tenant",
+   "reqd": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Posting Date",
+   "reqd": 1
+  },
+  {
+   "default": "Local",
+   "fieldname": "load_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Load Type",
+   "options": "Local\nLine Haul\nIntercity\nWarehouse Transfer",
+   "reqd": 1
+  },
+  {
+   "fieldname": "origin_city",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Origin City"
+  },
+  {
+   "fieldname": "destination_city",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Destination City"
+  },
+  {
+   "fieldname": "vehicle",
+   "fieldtype": "Link",
+   "label": "Vehicle",
+   "options": "Transport Vehicle"
+  },
+  {
+   "fieldname": "driver",
+   "fieldtype": "Link",
+   "label": "Driver",
+   "options": "Transport Driver"
+  },
+  {
+   "fieldname": "vehicle_owner",
+   "fieldtype": "Link",
+   "label": "Vehicle Owner",
+   "options": "Vehicle Owner"
+  },
+  {
+   "default": "Draft",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "Draft\nBooked\nIn Transit\nDelivered\nCancelled"
+  },
+  {
+   "fieldname": "total_bilties",
+   "fieldtype": "Int",
+   "label": "Total Bilties",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_freight",
+   "fieldtype": "Currency",
+   "label": "Total Freight",
+   "read_only": 1
+  },
+  {
+   "fieldname": "paid_amount",
+   "fieldtype": "Currency",
+   "label": "Paid Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "receiver_pay_amount",
+   "fieldtype": "Currency",
+   "label": "Receiver Pay Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "bilties_section",
+   "fieldtype": "Section Break",
+   "label": "Bilties"
+  },
+  {
+   "fieldname": "bilties",
+   "fieldtype": "Table",
+   "label": "Bilties",
+   "options": "Transport Load Bilty",
+   "reqd": 1
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
+  },
+  {
+   "fieldname": "column_break_load",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-04-26 00:00:00",
+ "modified_by": "Administrator",
+ "module": "Goods Transport",
+ "name": "Transport Load",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "SaaS Owner",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Tenant Admin",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Transport Manager",
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Accountant"
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "destination_city",
+ "track_changes": 1
+}

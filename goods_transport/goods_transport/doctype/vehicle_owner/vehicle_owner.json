@@ -1,0 +1,220 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:GT-OWN-{#####}",
+ "creation": "2026-04-26 00:00:00",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "owner_name",
+  "registration_type",
+  "whatsapp",
+  "address",
+  "can_drive_self",
+  "portal_user",
+  "status",
+  "column_break_ecju",
+  "tenant",
+  "cnic",
+  "mobile",
+  "ntn",
+  "bank_name",
+  "account_title",
+  "account_number",
+  "iban",
+  "verification_refrence_section",
+  "refrenc_ttransporter_name",
+  "office_address",
+  "verified",
+  "column_break_bopl",
+  "office_phone",
+  "city"
+ ],
+ "fields": [
+  {
+   "fieldname": "tenant",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Tenant",
+   "options": "Transport Tenant",
+   "reqd": 1
+  },
+  {
+   "fieldname": "owner_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Owner Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "registration_type",
+   "fieldtype": "Select",
+   "label": "Registration Type",
+   "options": "Individual\nCompany",
+   "reqd": 1
+  },
+  {
+   "fieldname": "cnic",
+   "fieldtype": "Data",
+   "label": "CNIC"
+  },
+  {
+   "fieldname": "ntn",
+   "fieldtype": "Data",
+   "label": "NTN"
+  },
+  {
+   "fieldname": "mobile",
+   "fieldtype": "Data",
+   "label": "Mobile"
+  },
+  {
+   "fieldname": "whatsapp",
+   "fieldtype": "Data",
+   "label": "WhatsApp"
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Small Text",
+   "label": "Address"
+  },
+  {
+   "fieldname": "bank_name",
+   "fieldtype": "Data",
+   "label": "Bank Name"
+  },
+  {
+   "fieldname": "account_title",
+   "fieldtype": "Data",
+   "label": "Account Title"
+  },
+  {
+   "fieldname": "account_number",
+   "fieldtype": "Data",
+   "label": "Account Number"
+  },
+  {
+   "fieldname": "iban",
+   "fieldtype": "Data",
+   "label": "IBAN"
+  },
+  {
+   "fieldname": "portal_user",
+   "fieldtype": "Link",
+   "label": "Portal User",
+   "options": "User"
+  },
+  {
+   "default": "0",
+   "fieldname": "can_drive_self",
+   "fieldtype": "Check",
+   "label": "Can Drive Self"
+  },
+  {
+   "default": "Active",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "Active\nInactive\nBlocked"
+  },
+  {
+   "fieldname": "column_break_ecju",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "verification_refrence_section",
+   "fieldtype": "Section Break",
+   "label": "Verification Refrence"
+  },
+  {
+   "fieldname": "refrenc_ttransporter_name",
+   "fieldtype": "Data",
+   "label": "Refrenc Ttransporter Name"
+  },
+  {
+   "fieldname": "office_address",
+   "fieldtype": "Data",
+   "label": "Office Address"
+  },
+  {
+   "default": "0",
+   "fieldname": "verified",
+   "fieldtype": "Check",
+   "label": "Verified"
+  },
+  {
+   "fieldname": "column_break_bopl",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "office_phone",
+   "fieldtype": "Data",
+   "label": "Office Phone"
+  },
+  {
+   "fieldname": "city",
+   "fieldtype": "Data",
+   "label": "City"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-04-26 20:42:18.617682",
+ "modified_by": "Administrator",
+ "module": "Goods Transport",
+ "name": "Vehicle Owner",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "SaaS Owner",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Tenant Admin",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Transport Manager",
+   "write": 1
+  },
+  {
+   "read": 1,
+   "report": 1,
+   "role": "Accountant"
+  },
+  {
+   "read": 1,
+   "role": "Vehicle Owner"
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "owner_name",
+ "track_changes": 1
+}

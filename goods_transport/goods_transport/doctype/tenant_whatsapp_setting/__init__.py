@@ -1,0 +1,1 @@
+"""Tenant WhatsApp Setting DocType."""

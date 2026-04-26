@@ -1,0 +1,107 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:GT-MAP-{#####}",
+ "creation": "2026-04-26 00:00:00",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "tenant",
+  "enabled",
+  "distance_calculation_enabled",
+  "column_break_bpag",
+  "google_api_key_password",
+  "route_preview_enabled",
+  "live_tracking_enabled"
+ ],
+ "fields": [
+  {
+   "fieldname": "tenant",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Tenant",
+   "options": "Transport Tenant",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "google_api_key_password",
+   "fieldtype": "Password",
+   "label": "Google API Key Password"
+  },
+  {
+   "default": "0",
+   "fieldname": "enabled",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Enabled"
+  },
+  {
+   "default": "0",
+   "fieldname": "distance_calculation_enabled",
+   "fieldtype": "Check",
+   "label": "Distance Calculation Enabled"
+  },
+  {
+   "default": "0",
+   "fieldname": "route_preview_enabled",
+   "fieldtype": "Check",
+   "label": "Route Preview Enabled"
+  },
+  {
+   "default": "0",
+   "fieldname": "live_tracking_enabled",
+   "fieldtype": "Check",
+   "label": "Live Tracking Enabled"
+  },
+  {
+   "fieldname": "column_break_bpag",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-04-26 20:53:06.313044",
+ "modified_by": "Administrator",
+ "module": "Goods Transport",
+ "name": "Tenant Google Map Setting",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "SaaS Owner",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Tenant Admin",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "read": 1,
+   "report": 1,
+   "role": "Transport Manager"
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "tenant",
+ "track_changes": 1
+}

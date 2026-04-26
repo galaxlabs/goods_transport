@@ -1,0 +1,143 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:GT-BR-{#####}",
+ "creation": "2026-04-26 00:00:00",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "tenant",
+  "city",
+  "address",
+  "is_default",
+  "column_break_mpab",
+  "branch_name",
+  "phone",
+  "manager",
+  "google_map_lng",
+  "google_map_lat"
+ ],
+ "fields": [
+  {
+   "fieldname": "tenant",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Tenant",
+   "options": "Transport Tenant",
+   "reqd": 1
+  },
+  {
+   "fieldname": "branch_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Branch Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "city",
+   "fieldtype": "Data",
+   "label": "City"
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Small Text",
+   "label": "Address"
+  },
+  {
+   "fieldname": "phone",
+   "fieldtype": "Data",
+   "label": "Phone"
+  },
+  {
+   "fieldname": "manager",
+   "fieldtype": "Link",
+   "label": "Manager",
+   "options": "User"
+  },
+  {
+   "fieldname": "google_map_lat",
+   "fieldtype": "Float",
+   "label": "Google Map Lat"
+  },
+  {
+   "fieldname": "google_map_lng",
+   "fieldtype": "Float",
+   "label": "Google Map Lng"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_default",
+   "fieldtype": "Check",
+   "label": "Is Default"
+  },
+  {
+   "fieldname": "column_break_mpab",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-04-26 21:22:25.440118",
+ "modified_by": "Administrator",
+ "module": "Goods Transport",
+ "name": "Tenant Branch",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "SaaS Owner",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Tenant Admin",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Transport Manager",
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Warehouse Manager",
+   "write": 1
+  },
+  {
+   "read": 1,
+   "report": 1,
+   "role": "Accountant"
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "branch_name",
+ "track_changes": 1
+}

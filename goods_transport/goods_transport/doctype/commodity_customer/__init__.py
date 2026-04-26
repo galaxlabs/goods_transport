@@ -1,0 +1,1 @@
+"""Commodity Customer DocType."""

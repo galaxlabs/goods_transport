@@ -1,0 +1,191 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:GT-VEH-{#####}",
+ "creation": "2026-04-26 00:00:00",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "tenant",
+  "vehicle_owner",
+  "capacity_weight",
+  "capacity_volume",
+  "current_lat",
+  "current_lng",
+  "last_location_time",
+  "column_break_hwkz",
+  "vehicle_number",
+  "vehicle_type",
+  "driver",
+  "capacity_weight_unit",
+  "insurance_expiry",
+  "status",
+  "fitness_certificate",
+  "route_permit",
+  "registration_book_image"
+ ],
+ "fields": [
+  {
+   "fieldname": "tenant",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Tenant",
+   "options": "Transport Tenant",
+   "reqd": 1
+  },
+  {
+   "fieldname": "vehicle_number",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Vehicle Number",
+   "reqd": 1
+  },
+  {
+   "fieldname": "vehicle_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Vehicle Type",
+   "options": "Truck\nTrailer\nMazda\nPickup\nContainer\nDumper\nOther",
+   "reqd": 1
+  },
+  {
+   "fieldname": "vehicle_owner",
+   "fieldtype": "Link",
+   "label": "Owner",
+   "options": "Vehicle Owner",
+   "reqd": 1
+  },
+  {
+   "fieldname": "driver",
+   "fieldtype": "Link",
+   "label": "Driver",
+   "options": "Transport Driver"
+  },
+  {
+   "fieldname": "capacity_weight",
+   "fieldtype": "Float",
+   "label": "Capacity Weight"
+  },
+  {
+   "fieldname": "capacity_weight_unit",
+   "fieldtype": "Select",
+   "label": "Capacity Weight Unit",
+   "options": "KG\nTon\nMaund"
+  },
+  {
+   "fieldname": "capacity_volume",
+   "fieldtype": "Float",
+   "label": "Capacity Volume"
+  },
+  {
+   "fieldname": "registration_book_image",
+   "fieldtype": "Attach",
+   "label": "Registration Book Image"
+  },
+  {
+   "fieldname": "fitness_certificate",
+   "fieldtype": "Attach",
+   "label": "Fitness Certificate"
+  },
+  {
+   "fieldname": "route_permit",
+   "fieldtype": "Attach",
+   "label": "Route Permit"
+  },
+  {
+   "fieldname": "insurance_expiry",
+   "fieldtype": "Date",
+   "label": "Insurance Expiry"
+  },
+  {
+   "default": "Available",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "Available\nOn Trip\nMaintenance\nBlocked"
+  },
+  {
+   "fieldname": "current_lat",
+   "fieldtype": "Float",
+   "label": "Current Lat"
+  },
+  {
+   "fieldname": "current_lng",
+   "fieldtype": "Float",
+   "label": "Current Lng"
+  },
+  {
+   "fieldname": "last_location_time",
+   "fieldtype": "Datetime",
+   "label": "Last Location Time"
+  },
+  {
+   "fieldname": "column_break_hwkz",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-04-26 20:48:14.193236",
+ "modified_by": "Administrator",
+ "module": "Goods Transport",
+ "name": "Transport Vehicle",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "SaaS Owner",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Tenant Admin",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Transport Manager",
+   "write": 1
+  },
+  {
+   "read": 1,
+   "report": 1,
+   "role": "Accountant"
+  },
+  {
+   "read": 1,
+   "role": "Vehicle Owner"
+  },
+  {
+   "read": 1,
+   "role": "Driver"
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "vehicle_number",
+ "track_changes": 1
+}

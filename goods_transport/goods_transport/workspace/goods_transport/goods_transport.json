@@ -1,0 +1,209 @@
+{
+ "charts": [],
+ "content": "[{\"id\":\"gt-header\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Goods Transport</b></span>\",\"col\":12}},{\"id\":\"gt-load\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Transport Load\",\"col\":3}},{\"id\":\"gt-customer\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Commodity Customer\",\"col\":3}},{\"id\":\"gt-vehicle\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Transport Vehicle\",\"col\":3}},{\"id\":\"gt-tenant\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Transport Tenant\",\"col\":3}},{\"id\":\"gt-spacer\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"gt-masters-header\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Masters & Settings</b></span>\",\"col\":12}},{\"id\":\"gt-operations-card\",\"type\":\"card\",\"data\":{\"card_name\":\"Operations\",\"col\":4}},{\"id\":\"gt-people-card\",\"type\":\"card\",\"data\":{\"card_name\":\"People\",\"col\":4}},{\"id\":\"gt-settings-card\",\"type\":\"card\",\"data\":{\"card_name\":\"Tenant Settings\",\"col\":4}}]",
+ "creation": "2026-04-26 00:00:00",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "truck",
+ "idx": 0,
+ "is_hidden": 0,
+ "label": "Goods Transport",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Operations",
+   "link_count": 0,
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Transport Load",
+   "link_count": 0,
+   "link_to": "Transport Load",
+   "link_type": "DocType",
+   "onboard": 1,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Commodity Customer",
+   "link_count": 0,
+   "link_to": "Commodity Customer",
+   "link_type": "DocType",
+   "onboard": 1,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Transport Vehicle",
+   "link_count": 0,
+   "link_to": "Transport Vehicle",
+   "link_type": "DocType",
+   "onboard": 1,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "People",
+   "link_count": 0,
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Vehicle Owner",
+   "link_count": 0,
+   "link_to": "Vehicle Owner",
+   "link_type": "DocType",
+   "onboard": 1,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Transport Driver",
+   "link_count": 0,
+   "link_to": "Transport Driver",
+   "link_type": "DocType",
+   "onboard": 1,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Tenant User Profile",
+   "link_count": 0,
+   "link_to": "Tenant User Profile",
+   "link_type": "DocType",
+   "onboard": 1,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Tenant Settings",
+   "link_count": 0,
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Transport Tenant",
+   "link_count": 0,
+   "link_to": "Transport Tenant",
+   "link_type": "DocType",
+   "onboard": 1,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Tenant Branch",
+   "link_count": 0,
+   "link_to": "Tenant Branch",
+   "link_type": "DocType",
+   "onboard": 1,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Tenant Print Setting",
+   "link_count": 0,
+   "link_to": "Tenant Print Setting",
+   "link_type": "DocType",
+   "onboard": 1,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Tenant WhatsApp Setting",
+   "link_count": 0,
+   "link_to": "Tenant WhatsApp Setting",
+   "link_type": "DocType",
+   "onboard": 1,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Tenant Google Map Setting",
+   "link_count": 0,
+   "link_to": "Tenant Google Map Setting",
+   "link_type": "DocType",
+   "onboard": 1,
+   "type": "Link"
+  }
+ ],
+ "modified": "2026-04-26 00:00:00",
+ "modified_by": "Administrator",
+ "module": "Goods Transport",
+ "name": "Goods Transport",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [
+  {
+   "role": "SaaS Owner"
+  },
+  {
+   "role": "Tenant Admin"
+  },
+  {
+   "role": "Transport Manager"
+  },
+  {
+   "role": "Accountant"
+  }
+ ],
+ "sequence_id": 1,
+ "shortcuts": [
+  {
+   "color": "Blue",
+   "doc_view": "List",
+   "label": "Transport Load",
+   "link_to": "Transport Load",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Green",
+   "doc_view": "List",
+   "label": "Commodity Customer",
+   "link_to": "Commodity Customer",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Orange",
+   "doc_view": "List",
+   "label": "Transport Vehicle",
+   "link_to": "Transport Vehicle",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Transport Tenant",
+   "link_to": "Transport Tenant",
+   "stats_filter": "[]",
+   "type": "DocType"
+  }
+ ],
+ "title": "Goods Transport"
+}

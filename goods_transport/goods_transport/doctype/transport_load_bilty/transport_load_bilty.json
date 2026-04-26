@@ -1,0 +1,160 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-04-26 00:00:00",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "bilty_no",
+  "sender_customer",
+  "sender_name",
+  "sender_mobile",
+  "sender_address",
+  "column_break_sender",
+  "receiver_customer",
+  "receiver_name",
+  "receiver_mobile",
+  "receiver_address",
+  "destination_city",
+  "goods_section",
+  "goods_description",
+  "packages",
+  "weight",
+  "column_break_payment",
+  "freight_amount",
+  "payment_type",
+  "invoice_customer",
+  "erpnext_sales_invoice"
+ ],
+ "fields": [
+  {
+   "fieldname": "bilty_no",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Bilty No",
+   "reqd": 1
+  },
+  {
+   "fieldname": "sender_customer",
+   "fieldtype": "Link",
+   "label": "Sender Customer",
+   "options": "Commodity Customer"
+  },
+  {
+   "fieldname": "sender_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Sender Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "sender_mobile",
+   "fieldtype": "Data",
+   "label": "Sender Mobile"
+  },
+  {
+   "fieldname": "sender_address",
+   "fieldtype": "Small Text",
+   "label": "Sender Address"
+  },
+  {
+   "fieldname": "receiver_customer",
+   "fieldtype": "Link",
+   "label": "Receiver Customer",
+   "options": "Commodity Customer"
+  },
+  {
+   "fieldname": "receiver_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Receiver Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "receiver_mobile",
+   "fieldtype": "Data",
+   "label": "Receiver Mobile"
+  },
+  {
+   "fieldname": "receiver_address",
+   "fieldtype": "Small Text",
+   "label": "Receiver Address"
+  },
+  {
+   "fieldname": "destination_city",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Destination City"
+  },
+  {
+   "fieldname": "goods_section",
+   "fieldtype": "Section Break",
+   "label": "Goods"
+  },
+  {
+   "fieldname": "goods_description",
+   "fieldtype": "Small Text",
+   "in_list_view": 1,
+   "label": "Goods Description"
+  },
+  {
+   "fieldname": "packages",
+   "fieldtype": "Int",
+   "label": "Packages"
+  },
+  {
+   "fieldname": "weight",
+   "fieldtype": "Float",
+   "label": "Weight"
+  },
+  {
+   "fieldname": "freight_amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Freight Amount"
+  },
+  {
+   "default": "Receiver Pay",
+   "fieldname": "payment_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Payment Type",
+   "options": "Paid\nReceiver Pay",
+   "reqd": 1
+  },
+  {
+   "fieldname": "invoice_customer",
+   "fieldtype": "Link",
+   "label": "Invoice Customer",
+   "options": "Commodity Customer"
+  },
+  {
+   "fieldname": "erpnext_sales_invoice",
+   "fieldtype": "Link",
+   "label": "ERPNext Sales Invoice",
+   "options": "Sales Invoice",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_sender",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_payment",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "istable": 1,
+ "links": [],
+ "modified": "2026-04-26 00:00:00",
+ "modified_by": "Administrator",
+ "module": "Goods Transport",
+ "name": "Transport Load Bilty",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

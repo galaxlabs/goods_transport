@@ -1,0 +1,157 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:GT-PRINT-{#####}",
+ "creation": "2026-04-26 00:00:00",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "tenant",
+  "title",
+  "language",
+  "is_default",
+  "column_break_wzkg",
+  "print_type",
+  "letterhead",
+  "stamp_image",
+  "signature_image",
+  "section_break_xqlt",
+  "header_html",
+  "footer_html",
+  "terms_and_conditions"
+ ],
+ "fields": [
+  {
+   "fieldname": "tenant",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Tenant",
+   "options": "Transport Tenant",
+   "reqd": 1
+  },
+  {
+   "fieldname": "print_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Print Type",
+   "options": "Bilty\nFreight Invoice\nWarehouse Invoice\nDelivery Challan\nGoods Receipt\nPayment Receipt",
+   "reqd": 1
+  },
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Title",
+   "reqd": 1
+  },
+  {
+   "fieldname": "letterhead",
+   "fieldtype": "Link",
+   "label": "Letterhead",
+   "options": "Letter Head"
+  },
+  {
+   "fieldname": "header_html",
+   "fieldtype": "JSON",
+   "label": "Header HTML",
+   "options": "Html"
+  },
+  {
+   "fieldname": "footer_html",
+   "fieldtype": "Text Editor",
+   "label": "Footer HTML"
+  },
+  {
+   "fieldname": "terms_and_conditions",
+   "fieldtype": "Small Text",
+   "label": "Terms And Conditions"
+  },
+  {
+   "default": "English",
+   "fieldname": "language",
+   "fieldtype": "Select",
+   "label": "Language",
+   "options": "English\nUrdu\nRoman Urdu\nBoth"
+  },
+  {
+   "fieldname": "signature_image",
+   "fieldtype": "Attach Image",
+   "label": "Signature Image"
+  },
+  {
+   "fieldname": "stamp_image",
+   "fieldtype": "Attach Image",
+   "label": "Stamp Image"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_default",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Is Default"
+  },
+  {
+   "fieldname": "column_break_wzkg",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_xqlt",
+   "fieldtype": "Section Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-04-26 20:57:39.100260",
+ "modified_by": "Administrator",
+ "module": "Goods Transport",
+ "name": "Tenant Print Setting",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "SaaS Owner",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Tenant Admin",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "read": 1,
+   "report": 1,
+   "role": "Transport Manager"
+  },
+  {
+   "read": 1,
+   "report": 1,
+   "role": "Warehouse Manager"
+  },
+  {
+   "read": 1,
+   "report": 1,
+   "role": "Accountant"
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "title",
+ "track_changes": 1
+}

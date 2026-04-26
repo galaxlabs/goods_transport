@@ -1,0 +1,234 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:GT-CUST-{#####}",
+ "creation": "2026-04-26 00:00:00",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "tenant",
+  "business_name",
+  "strn",
+  "mobile",
+  "cnic",
+  "city",
+  "address",
+  "payment_terms",
+  "status",
+  "column_break_ozhi",
+  "customer_name",
+  "customer_type",
+  "ntn",
+  "whatsapp",
+  "email",
+  "credit_limit",
+  "opening_balance",
+  "portal_user",
+  "erpnext_sync_section",
+  "sync_to_erpnext",
+  "synced_to_erpnext",
+  "erpnext_customer",
+  "erpnext_contact",
+  "erpnext_address"
+ ],
+ "fields": [
+  {
+   "fieldname": "tenant",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Tenant",
+   "options": "Transport Tenant",
+   "reqd": 1
+  },
+  {
+   "fieldname": "customer_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Customer Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "business_name",
+   "fieldtype": "Data",
+   "label": "Business Name"
+  },
+  {
+   "fieldname": "customer_type",
+   "fieldtype": "Select",
+   "label": "Customer Type",
+   "options": "Individual\nCompany\nBroker\nCommodity Owner",
+   "reqd": 1
+  },
+  {
+   "fieldname": "cnic",
+   "fieldtype": "Data",
+   "label": "CNIC"
+  },
+  {
+   "fieldname": "ntn",
+   "fieldtype": "Data",
+   "label": "NTN"
+  },
+  {
+   "fieldname": "strn",
+   "fieldtype": "Data",
+   "label": "STRN"
+  },
+  {
+   "fieldname": "mobile",
+   "fieldtype": "Data",
+   "label": "Mobile"
+  },
+  {
+   "fieldname": "whatsapp",
+   "fieldtype": "Data",
+   "label": "WhatsApp"
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email"
+  },
+  {
+   "fieldname": "city",
+   "fieldtype": "Data",
+   "label": "City"
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Small Text",
+   "label": "Address"
+  },
+  {
+   "fieldname": "credit_limit",
+   "fieldtype": "Currency",
+   "label": "Credit Limit"
+  },
+  {
+   "fieldname": "payment_terms",
+   "fieldtype": "Data",
+   "label": "Payment Terms"
+  },
+  {
+   "fieldname": "opening_balance",
+   "fieldtype": "Currency",
+   "label": "Opening Balance"
+  },
+  {
+   "fieldname": "portal_user",
+   "fieldtype": "Link",
+   "label": "Portal User",
+   "options": "User"
+  },
+  {
+   "fieldname": "erpnext_sync_section",
+   "fieldtype": "Section Break",
+   "label": "ERPNext Sync"
+  },
+  {
+   "default": "1",
+   "fieldname": "sync_to_erpnext",
+   "fieldtype": "Check",
+   "label": "Sync to ERPNext"
+  },
+  {
+   "default": "0",
+   "fieldname": "synced_to_erpnext",
+   "fieldtype": "Check",
+   "label": "Synced to ERPNext",
+   "read_only": 1
+  },
+  {
+   "fieldname": "erpnext_customer",
+   "fieldtype": "Link",
+   "label": "ERPNext Customer",
+   "options": "Customer",
+   "read_only": 1
+  },
+  {
+   "fieldname": "erpnext_contact",
+   "fieldtype": "Link",
+   "label": "ERPNext Contact",
+   "options": "Contact",
+   "read_only": 1
+  },
+  {
+   "fieldname": "erpnext_address",
+   "fieldtype": "Link",
+   "label": "ERPNext Address",
+   "options": "Address",
+   "read_only": 1
+  },
+  {
+   "default": "Active",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "Active\nInactive\nBlocked"
+  },
+  {
+   "fieldname": "column_break_ozhi",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-04-26 20:51:44.183847",
+ "modified_by": "Administrator",
+ "module": "Goods Transport",
+ "name": "Commodity Customer",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "SaaS Owner",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Tenant Admin",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Transport Manager",
+   "write": 1
+  },
+  {
+   "read": 1,
+   "report": 1,
+   "role": "Accountant"
+  },
+  {
+   "read": 1,
+   "role": "Customer"
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "customer_name",
+ "track_changes": 1
+}

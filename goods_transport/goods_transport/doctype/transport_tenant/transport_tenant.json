@@ -1,0 +1,199 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:GT-TEN-{#####}",
+ "creation": "2026-04-26 00:00:00",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "tenant_name",
+  "registration_type",
+  "strn",
+  "city",
+  "province",
+  "address",
+  "logo",
+  "default_letterhead",
+  "subscription_plan",
+  "column_break_iryq",
+  "company_type",
+  "ntn",
+  "cnic",
+  "phone",
+  "whatsapp_number",
+  "email",
+  "default_currency",
+  "status",
+  "default_print_format",
+  "created_by_user",
+  "whatsapp_enabled",
+  "google_maps_enabled"
+ ],
+ "fields": [
+  {
+   "fieldname": "tenant_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Tenant Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "company_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Company Type",
+   "options": "Transport\nWarehouse\nBoth",
+   "reqd": 1
+  },
+  {
+   "fieldname": "registration_type",
+   "fieldtype": "Select",
+   "label": "Registration Type",
+   "options": "Individual\nCompany",
+   "reqd": 1
+  },
+  {
+   "fieldname": "ntn",
+   "fieldtype": "Data",
+   "label": "NTN"
+  },
+  {
+   "fieldname": "strn",
+   "fieldtype": "Data",
+   "label": "STRN"
+  },
+  {
+   "fieldname": "cnic",
+   "fieldtype": "Data",
+   "label": "CNIC"
+  },
+  {
+   "fieldname": "phone",
+   "fieldtype": "Data",
+   "label": "Phone"
+  },
+  {
+   "fieldname": "whatsapp_number",
+   "fieldtype": "Data",
+   "label": "WhatsApp Number"
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email"
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Small Text",
+   "label": "Address"
+  },
+  {
+   "fieldname": "city",
+   "fieldtype": "Data",
+   "label": "City"
+  },
+  {
+   "fieldname": "province",
+   "fieldtype": "Data",
+   "label": "Province"
+  },
+  {
+   "default": "Trial",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "Trial\nActive\nSuspended\nClosed"
+  },
+  {
+   "default": "PKR",
+   "fieldname": "default_currency",
+   "fieldtype": "Data",
+   "label": "Default Currency"
+  },
+  {
+   "fieldname": "logo",
+   "fieldtype": "Attach Image",
+   "label": "Logo"
+  },
+  {
+   "fieldname": "default_letterhead",
+   "fieldtype": "Link",
+   "label": "Default Letterhead",
+   "options": "Letter Head"
+  },
+  {
+   "fieldname": "default_print_format",
+   "fieldtype": "Link",
+   "label": "Default Print Format",
+   "options": "Print Format"
+  },
+  {
+   "default": "0",
+   "fieldname": "google_maps_enabled",
+   "fieldtype": "Check",
+   "label": "Google Maps Enabled"
+  },
+  {
+   "default": "0",
+   "fieldname": "whatsapp_enabled",
+   "fieldtype": "Check",
+   "label": "WhatsApp Enabled"
+  },
+  {
+   "fieldname": "subscription_plan",
+   "fieldtype": "Data",
+   "label": "Subscription Plan"
+  },
+  {
+   "fieldname": "created_by_user",
+   "fieldtype": "Link",
+   "label": "Created By User",
+   "options": "User",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_iryq",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-04-26 20:46:32.690119",
+ "modified_by": "Administrator",
+ "module": "Goods Transport",
+ "name": "Transport Tenant",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "SaaS Owner",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Tenant Admin",
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "tenant_name",
+ "track_changes": 1
+}

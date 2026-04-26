@@ -1,0 +1,1 @@
+"""Tenant User Profile DocType."""

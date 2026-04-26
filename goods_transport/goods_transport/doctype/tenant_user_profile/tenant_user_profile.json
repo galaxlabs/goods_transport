@@ -1,0 +1,120 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:GT-UP-{#####}",
+ "creation": "2026-04-26 00:00:00",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "tenant",
+  "role_type",
+  "linked_customer",
+  "linked_vehicle_owner",
+  "column_break_gvql",
+  "user",
+  "branch",
+  "linked_driver",
+  "is_active"
+ ],
+ "fields": [
+  {
+   "fieldname": "tenant",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Tenant",
+   "options": "Transport Tenant",
+   "reqd": 1
+  },
+  {
+   "fieldname": "user",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "User",
+   "options": "User",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "role_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Role Type",
+   "options": "Tenant Admin\nTransport Manager\nWarehouse Manager\nAccountant\nDriver\nVehicle Owner\nCustomer",
+   "reqd": 1
+  },
+  {
+   "fieldname": "branch",
+   "fieldtype": "Link",
+   "label": "Branch",
+   "options": "Tenant Branch"
+  },
+  {
+   "fieldname": "linked_customer",
+   "fieldtype": "Link",
+   "label": "Linked Customer",
+   "options": "Commodity Customer"
+  },
+  {
+   "fieldname": "linked_driver",
+   "fieldtype": "Link",
+   "label": "Linked Driver",
+   "options": "Transport Driver"
+  },
+  {
+   "fieldname": "linked_vehicle_owner",
+   "fieldtype": "Link",
+   "label": "Linked Vehicle Owner",
+   "options": "Vehicle Owner"
+  },
+  {
+   "default": "1",
+   "fieldname": "is_active",
+   "fieldtype": "Check",
+   "label": "Is Active"
+  },
+  {
+   "fieldname": "column_break_gvql",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-04-26 20:44:40.873987",
+ "modified_by": "Administrator",
+ "module": "Goods Transport",
+ "name": "Tenant User Profile",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "SaaS Owner",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Tenant Admin",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "user",
+ "track_changes": 1
+}
