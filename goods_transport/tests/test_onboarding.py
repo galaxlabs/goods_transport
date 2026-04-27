@@ -17,11 +17,13 @@ from goods_transport.api.simple import (
 	create_vehicle,
 	get_customers,
 	get_dashboard,
+	get_record,
 	get_fleet_map,
 	get_vehicles,
 	list_customers,
 	list_loads,
 	list_vehicles,
+	update_record,
 )
 from goods_transport.tests.test_tenant_foundation import add_role, make_tenant, make_tenant_profile, make_user
 
@@ -178,3 +180,23 @@ class TestOnboarding(FrappeTestCase):
 		self.assertTrue(any(row["label"] == "DASH-100" for row in list_vehicles()["rows"]))
 		self.assertTrue(any(row["destination_city"] == "Multan" for row in list_loads()["rows"]))
 		self.assertTrue(any(row["label"] == "DASH-100" for row in get_fleet_map()["vehicles"]))
+
+	def test_simple_record_detail_and_update_api_support_frontend_editing(self):
+		user = make_user("tenant.editor@example.com", "Editor Admin")
+		add_role(user.name, "Tenant Admin")
+		tenant = make_tenant("Editor Tenant")
+		make_tenant_profile(user.name, tenant.name)
+
+		frappe.set_user(user.name)
+		customer = create_customer(customer="Editable Customer", mobile="03001114444", city="Lahore", sync_to_erpnext=0)
+		detail = get_record("customer", customer["id"])
+		self.assertEqual(detail["id"], customer["id"])
+		self.assertEqual(detail["label"], "Editable Customer")
+
+		updated = update_record("customer", customer["id"], {"mobile": "03009990000", "city": "Karachi"})
+		self.assertEqual(updated["mobile"], "03009990000")
+		self.assertEqual(updated["city"], "Karachi")
+
+		vehicle = create_vehicle(vehicle="EDIT-100", owner="Edit Owner", driver="Edit Driver")
+		updated_vehicle = update_record("vehicle", vehicle["id"], {"status": "Maintenance"})
+		self.assertEqual(updated_vehicle["status"], "Maintenance")

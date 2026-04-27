@@ -16,6 +16,66 @@ from goods_transport.services.onboarding import (
 from goods_transport.services.tenant import validate_same_tenant
 
 
+RECORD_CONFIG = {
+	"customer": {
+		"doctype": "Commodity Customer",
+		"label_field": "customer_name",
+		"editable_fields": {
+			"customer_name",
+			"business_name",
+			"customer_type",
+			"mobile",
+			"whatsapp",
+			"email",
+			"city",
+			"address",
+			"status",
+		},
+		"aliases": {"label": "customer_name", "customer": "customer_name", "type": "customer_type"},
+	},
+	"vehicle": {
+		"doctype": "Transport Vehicle",
+		"label_field": "vehicle_number",
+		"editable_fields": {
+			"vehicle_number",
+			"vehicle_type",
+			"status",
+			"capacity_weight",
+			"capacity_weight_unit",
+			"capacity_volume",
+			"current_lat",
+			"current_lng",
+		},
+		"aliases": {"label": "vehicle_number", "vehicle": "vehicle_number", "type": "vehicle_type", "lat": "current_lat", "lng": "current_lng"},
+	},
+	"load": {
+		"doctype": "Transport Load",
+		"label_field": "name",
+		"editable_fields": {
+			"posting_date",
+			"load_type",
+			"origin_city",
+			"destination_city",
+			"status",
+			"remarks",
+		},
+		"aliases": {"label": "name"},
+	},
+}
+
+
+@frappe.whitelist(allow_guest=True)
+def connection_status():
+	user = frappe.session.user or "Guest"
+	authenticated = user != "Guest"
+	return {
+		"reachable": True,
+		"authenticated": authenticated,
+		"user": user if authenticated else None,
+		"message": f"Backend reachable • Logged in as {user}" if authenticated else "Backend reachable • Guest session",
+	}
+
+
 def _payload(data=None, **kwargs):
 	if isinstance(data, str):
 		data = frappe.parse_json(data)
@@ -129,6 +189,50 @@ def _recent_activity(tenant=None):
 		{"label": row.label, "value": cint(row.value), "freight": float(row.freight or 0)}
 		for row in rows
 	]
+
+
+def _record_config(kind):
+	config = RECORD_CONFIG.get(kind)
+	if not config:
+		frappe.throw(_("Unsupported record type {0}.").format(kind))
+	return config
+
+
+def _assert_record_tenant(doctype, name, tenant=None):
+	tenant_name = tenant_for_onboarding(tenant=tenant)
+	if tenant_name:
+		validate_same_tenant(doctype, name, tenant_name, doctype)
+
+
+def _record_payload(kind, doc):
+	config = _record_config(kind)
+	data = {
+		"kind": kind,
+		"doctype": doc.doctype,
+		"id": doc.name,
+		"label": doc.get(config["label_field"]) if config["label_field"] != "name" else doc.name,
+		"tenant": doc.get("tenant"),
+		"desk_url": f"/app/{frappe.scrub(doc.doctype).replace('_', '-')}/{doc.name}",
+		"fields": {},
+	}
+	for fieldname in sorted(config["editable_fields"]):
+		value = doc.get(fieldname)
+		data["fields"][fieldname] = value
+		data[fieldname] = value
+	return data
+
+
+def _normalize_update_data(kind, data):
+	config = _record_config(kind)
+	normalized = {}
+	for key, value in data.items():
+		fieldname = config["aliases"].get(key, key)
+		if fieldname == "name":
+			continue
+		if fieldname not in config["editable_fields"]:
+			continue
+		normalized[fieldname] = value
+	return normalized
 
 
 def _ensure_vehicle_owner(tenant_name, data):
@@ -399,3 +503,27 @@ def get_fleet_map(tenant=None):
 			for row in rows
 		],
 	}
+
+
+@frappe.whitelist()
+def get_record(kind, name, tenant=None):
+	config = _record_config(kind)
+	_assert_record_tenant(config["doctype"], name, tenant=tenant)
+	doc = frappe.get_doc(config["doctype"], name)
+	return _record_payload(kind, doc)
+
+
+@frappe.whitelist()
+def update_record(kind, name, data=None, tenant=None, **kwargs):
+	config = _record_config(kind)
+	_assert_record_tenant(config["doctype"], name, tenant=tenant)
+	doc = frappe.get_doc(config["doctype"], name)
+	payload = _payload(data, **kwargs)
+	updates = _normalize_update_data(kind, payload)
+	if not updates:
+		frappe.throw(_("No editable fields were provided."))
+
+	for fieldname, value in updates.items():
+		doc.set(fieldname, value)
+	doc.save(ignore_permissions=True)
+	return _record_payload(kind, doc)
